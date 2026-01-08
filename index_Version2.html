@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>World Clock — Multiple Time Zones</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>World Clock</h1>
+      <p class="subtitle">Live digital clocks for multiple time zones — add, remove & save.</p>
+    </header>
+
+    <section class="controls" aria-label="Clock controls">
+      <div class="control-row">
+        <label for="tz-select">Add timezone:</label>
+        <input id="tz-search" placeholder="Search timezones (e.g. Kolkata, New York) or paste IANA zone" aria-label="Search timezones"/>
+        <select id="tz-select" aria-label="Timezone list"></select>
+        <input id="label-input" placeholder="Optional label (e.g. Office, Mom)" aria-label="Custom label"/>
+        <button id="btn-add">Add</button>
+      </div>
+
+      <div class="control-row small">
+        <label><input type="checkbox" id="toggle-24" /> Use 24-hour</label>
+        <button id="btn-reset">Reset to defaults</button>
+      </div>
+    </section>
+
+    <main>
+      <ul id="clocks" class="clock-list" aria-live="polite"></ul>
+      <div id="empty" class="empty">No clocks yet. Add a timezone above.</div>
+    </main>
+
+    <footer>
+      <small>Time zones use IANA names. Examples: "Asia/Kolkata", "America/New_York", "Europe/London".</small>
+    </footer>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
